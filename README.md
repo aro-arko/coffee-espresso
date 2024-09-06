@@ -54,13 +54,12 @@ Coffee Espresso is a simple web application for managing coffee data. It feature
     mongod
 
 5.  **Run the Application**
-- **Start the Back-End Server**
-Open a terminal, navigate to the server directory, and start the server:
-   ```bash
-    mongod
+- **Start the Back-End Application**
+Open another terminal, navigate to the server directory, and start the server:
+
     cd server
     npm start
-```
+
 - **Start the Front-End Application**
 Open another terminal, navigate to the client directory, and start the React application:
 
@@ -92,6 +91,3 @@ Feel free to contribute to this project by submitting issues or pull requests.
 
 ## Contact
 For any questions or inquiries, please contact aroarko.sd@gmail.com.
-
-
-
