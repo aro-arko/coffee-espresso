@@ -108,7 +108,7 @@ const Footer = () => {
               ></textarea>
 
               <input
-                className="btn font-rancho bg-[#D2B48C] font-bold text-xl border-black border-2"
+                className="btn font-rancho bg-[#D2B48C] text-lg font-normal border-black border-2"
                 type="submit"
                 value="Send Message"
               />

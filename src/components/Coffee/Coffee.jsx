@@ -80,7 +80,7 @@ const Coffee = ({ coffee, coffees, setCoffees }) => {
           </Link>
           <button
             onClick={() => handleDelete(_id)}
-            className="btn bg-[#EA4744]"
+            className="btn bg-[#EA4744] w-full"
           >
             <MdDelete className="h-5 w-5 text-white" />
           </button>
