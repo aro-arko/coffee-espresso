@@ -1,5 +1,6 @@
 import React from "react";
 import footerBanner from "../../assets/images/more/footer_banner.jpg";
+import copyRightBanner from "../../assets/images/more/15.jpg";
 import logo from "../../assets/images/more/logo1.png";
 import { FaFacebook } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
@@ -106,7 +107,6 @@ const Footer = () => {
                 placeholder="Message"
               ></textarea>
 
-              {/* <br /> */}
               <input
                 className="btn font-rancho bg-[#D2B48C] font-bold text-xl border-black border-2"
                 type="submit"
@@ -115,7 +115,18 @@ const Footer = () => {
             </form>
           </div>
         </div>
-        <div></div>
+      </div>
+      <div
+        style={{
+          backgroundImage: `url(${copyRightBanner})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          padding: "20px",
+          textAlign: "center",
+          color: "#fff",
+        }}
+      >
+        <p>Copyright © Espresso Emporium ! All Rights Reserved</p>
       </div>
     </div>
   );
