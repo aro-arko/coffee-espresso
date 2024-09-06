@@ -56,13 +56,13 @@ Coffee Espresso is a simple web application for managing coffee data. It feature
 5.  **Run the Application**
 - **Start the Back-End Application**
 Open another terminal, navigate to the server directory, and start the server:
-
+     ```bash
     cd server
     npm start
 
 - **Start the Front-End Application**
 Open another terminal, navigate to the client directory, and start the React application:
-
+     ```bash
     cd client
     npm start
 
