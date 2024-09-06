@@ -6,6 +6,11 @@ import Home from "./components/Home/Home.jsx";
 import AddCoffee from "./components/AddCoffee/AddCoffee.jsx";
 import Root from "./components/Root/Root.jsx";
 import UpdateCoffee from "./components/UpdateCoffee/UpdateCoffee.jsx";
+import SignUp from "./components/SignUp/SignUp.jsx";
+import LogIn from "./components/LogIn/LogIn.jsx";
+import AuthProvider from "./components/providers/AuthProvider.jsx";
+import Users from "./components/Users/Users.jsx";
+import CoffeeDetails from "./components/CoffeeDetails/CoffeeDetails.jsx";
 
 const router = createBrowserRouter([
   {
@@ -15,12 +20,14 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch("http://localhost:5000/coffee"),
+        loader: () =>
+          fetch("https://coffee-espresso-store.onrender.com/coffee"),
       },
       {
         path: "/home",
         element: <Home></Home>,
-        loader: () => fetch("http://localhost:5000/coffee"),
+        loader: () =>
+          fetch("https://coffee-espresso-store.onrender.com/coffee"),
       },
       {
         path: "/addCoffee",
@@ -30,7 +37,30 @@ const router = createBrowserRouter([
         path: "/updateCoffee/:id",
         element: <UpdateCoffee></UpdateCoffee>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/coffee/${params.id}`),
+          fetch(
+            `https://coffee-espresso-store.onrender.com/coffee/${params.id}`
+          ),
+      },
+      {
+        path: "/signup",
+        element: <SignUp></SignUp>,
+      },
+      {
+        path: "/login",
+        element: <LogIn></LogIn>,
+      },
+      {
+        path: "/users",
+        element: <Users></Users>,
+        loader: () => fetch("https://coffee-espresso-store.onrender.com/user"),
+      },
+      {
+        path: "coffee/:id",
+        element: <CoffeeDetails></CoffeeDetails>,
+        loader: ({ params }) =>
+          fetch(
+            `https://coffee-espresso-store.onrender.com/coffee/${params.id}`
+          ),
       },
     ],
   },
@@ -38,6 +68,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   </StrictMode>
 );

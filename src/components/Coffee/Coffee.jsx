@@ -20,7 +20,7 @@ const Coffee = ({ coffee, coffees, setCoffees }) => {
   // console.log(coffees);
 
   const handleDelete = (_id) => {
-    console.log("Delete triggered for ID:", _id); // Debugging line
+    // console.log(_id);
 
     Swal.fire({
       title: "Are you sure?",
@@ -32,36 +32,24 @@ const Coffee = ({ coffee, coffees, setCoffees }) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/coffee/${_id}`, {
+        fetch(`https://coffee-espresso-store.onrender.com/coffee/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
           .then((data) => {
-            console.log("Delete response:", data); // Check if delete response is correct
             if (data.deletedCount > 0) {
               Swal.fire({
                 title: "Deleted!",
                 text: "Your file has been deleted.",
                 icon: "success",
               });
-
-              // Correct the filter function
               const updatedCoffees = coffees.filter((cof) => cof._id !== _id);
-              console.log("Updated coffee list:", updatedCoffees); // Debugging line
-
-              // Update the state with the new coffee list
               setCoffees(updatedCoffees);
-            } else {
-              console.error("No items were deleted.");
             }
-          })
-          .catch((error) => {
-            console.error("Error during deletion:", error);
           });
       }
     });
   };
-
   return (
     <div className="bg-[#F5F4F1] p-12 rounded-2xl">
       <div className="flex justify-between items-center">
@@ -80,9 +68,11 @@ const Coffee = ({ coffee, coffees, setCoffees }) => {
           </h5>
         </div>
         <div className="grid grid-cols-1">
-          <button className="btn bg-[#D2B48C] mb-2">
-            <FaEye className="h-5 w-5 text-white" />
-          </button>
+          <Link to={`/coffee/${_id}`}>
+            <button className="btn bg-[#D2B48C] mb-2">
+              <FaEye className="h-5 w-5 text-white" />
+            </button>
+          </Link>
           <Link to={`/updateCoffee/${_id}`}>
             <button className="btn bg-[#3C393B] mb-2">
               <MdEdit className="h-5 w-5 text-white" />
