@@ -49,8 +49,9 @@ const AddCoffee = () => {
         }
       });
   };
+
   return (
-    <div className="max-w-6xl mx-auto px-4 py-8">
+    <div className="max-w-6xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
       <Link to="/home" className="block mb-8 text-blue-600 hover:underline">
         <span className="flex items-center">
           <IoArrowBack className="mr-1" /> Back to Home
@@ -66,16 +67,16 @@ const AddCoffee = () => {
             Whether it’s a rich espresso blend or a smooth, aromatic roast,
             share the story behind your coffee creation. Let's make every sip
             unforgettable by capturing the unique flavors, origins, and essence
-            of your brew
+            of your brew.
           </p>
         </div>
 
         <form
           onSubmit={handleAddCoffee}
-          className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6"
+          className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6"
         >
           <div>
-            <label className="mb-2">
+            <label className="block mb-2">
               <span className="font-medium">Name</span>
             </label>
             <input
@@ -87,7 +88,7 @@ const AddCoffee = () => {
             />
           </div>
           <div>
-            <label className="mb-2">
+            <label className="block mb-2">
               <span className="font-medium">Chef</span>
             </label>
             <input
@@ -99,7 +100,7 @@ const AddCoffee = () => {
             />
           </div>
           <div>
-            <label className="mb-2">
+            <label className="block mb-2">
               <span className="font-medium">Supplier</span>
             </label>
             <input
@@ -111,7 +112,7 @@ const AddCoffee = () => {
             />
           </div>
           <div>
-            <label className="mb-2">
+            <label className="block mb-2">
               <span className="font-medium">Taste</span>
             </label>
             <input
@@ -123,7 +124,7 @@ const AddCoffee = () => {
             />
           </div>
           <div>
-            <label className="mb-2">
+            <label className="block mb-2">
               <span className="font-medium">Category</span>
             </label>
             <input
@@ -135,19 +136,19 @@ const AddCoffee = () => {
             />
           </div>
           <div>
-            <label className="mb-2">
+            <label className="block mb-2">
               <span className="font-medium">Quantity</span>
             </label>
             <input
               className="w-full p-2 border border-gray-300 rounded"
               type="number"
               name="quantity"
-              placeholder="Enter coffee category"
+              placeholder="Enter coffee quantity"
               required
             />
           </div>
           <div>
-            <label className="mb-2">
+            <label className="block mb-2">
               <span className="font-medium">Details</span>
             </label>
             <input
@@ -159,7 +160,7 @@ const AddCoffee = () => {
             />
           </div>
           <div className="col-span-1 md:col-span-2">
-            <label className="mb-2">
+            <label className="block mb-2">
               <span className="font-medium">Photo</span>
             </label>
             <input
