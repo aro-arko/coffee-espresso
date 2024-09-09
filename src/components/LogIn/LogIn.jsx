@@ -11,11 +11,11 @@ const LogIn = () => {
     const email = form.email.value;
     const password = form.password.value;
 
-    console.log(email, password);
+    // console.log(email, password);
 
     signInUser(email, password)
       .then((result) => {
-        console.log(result.user);
+        // console.log(result.user);
 
         const lastLoggedIn = result.user.metadata.lastSignInTime;
         const user = {
@@ -32,7 +32,7 @@ const LogIn = () => {
         })
           .then((res) => res.json())
           .then((data) => {
-            console.log(data);
+            // console.log(data);
           });
       })
       .catch((error) => {

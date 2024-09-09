@@ -27,7 +27,7 @@ const AddCoffee = () => {
       details,
       photo,
     };
-    console.log(newCoffee);
+    // console.log(newCoffee);
 
     fetch("https://coffee-espresso-store.onrender.com/coffee", {
       method: "POST",
@@ -38,7 +38,7 @@ const AddCoffee = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         if (data.insertedId) {
           Swal.fire({
             title: "Success!",

@@ -7,7 +7,7 @@ const CoffeeDetails = () => {
   const coffeeDetails = useLoaderData();
   const { name, photo, chef, supplier, category, taste, details } =
     coffeeDetails;
-  console.log(coffeeDetails);
+  // console.log(coffeeDetails);
 
   return (
     <div

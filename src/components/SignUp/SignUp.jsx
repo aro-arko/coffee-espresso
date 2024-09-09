@@ -15,7 +15,7 @@ const SignUp = () => {
 
     createUser(email, password)
       .then((result) => {
-        console.log(result.user);
+        // console.log(result.user);
 
         const creationTime = result.user?.metadata?.creationTime;
         const user = { email, creationTime: creationTime };
@@ -29,7 +29,7 @@ const SignUp = () => {
         })
           .then((res) => res.json())
           .then((data) => {
-            console.log(data);
+            // console.log(data);
             Swal.fire({
               // position: "top-end",
               icon: "success",
@@ -40,7 +40,7 @@ const SignUp = () => {
           });
       })
       .catch((error) => {
-        console.log(error);
+        // console.log(error);
       });
   };
 
